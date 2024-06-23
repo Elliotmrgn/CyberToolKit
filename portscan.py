@@ -1,6 +1,6 @@
 import socket
 
-class PortScan():
+class PortScan:
     def __init__(self):
         self.target_ip = ""
         self.target_ports = set()
@@ -45,4 +45,3 @@ class PortScan():
         self.get_target_ports()
         self.scan()
                 
-

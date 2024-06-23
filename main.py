@@ -1,7 +1,7 @@
 import os
 import platform
 from title import title
-from portscan import port_scan
+from portscan import PortScan
 from robotscan import robot_scan
 
 
@@ -20,6 +20,7 @@ class Menu:
         print(title())
         for i, option in enumerate(options, 1):
             print(f"{i}) {option["name"]}")
+        print("0) Quit")
     
     def get_choice(self):
         choice = input("Enter your choice: ")
@@ -48,9 +49,9 @@ class Menu:
         
 if __name__ == "__main__":
     options = [
-        {"name": "Port Scanner", "action": port_scan},
+        {"name": "Port Scanner", "action": PortScan().run},
         {"name": "Robot Search", "action": robot_scan},
-        {"name": "Something Else", "action": print("YO")},
+        
     ]
     menu = Menu(options)
     menu.run()
