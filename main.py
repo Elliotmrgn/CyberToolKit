@@ -2,7 +2,7 @@ import os
 import platform
 from title import title
 from portscan import PortScan
-from robotscan import robot_scan
+from robotscan import RobotsScanner
 
 
 
@@ -50,7 +50,7 @@ class Menu:
 if __name__ == "__main__":
     options = [
         {"name": "Port Scanner", "action": PortScan().run},
-        {"name": "Robot Search", "action": robot_scan},
+        {"name": "Robot Search", "action": RobotsScanner().run},
         
     ]
     menu = Menu(options)
