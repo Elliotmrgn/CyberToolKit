@@ -15,6 +15,7 @@ class RobotsScanner:
         self.entries: List[RobotsTxtEntry] = []
 
     def scan(self) -> bool:
+        # Checks for robots.txt and passes text into parser if found
         try:
             response = requests.get(self.target)
             if response.status_code == 200:
@@ -25,6 +26,7 @@ class RobotsScanner:
             return False
 
     def _parse_robots_txt(self, content: str) -> None:
+        # Parses robots text for display
         current_entry: Optional[RobotsTxtEntry] = None
 
         for line in content.split('\n'):
@@ -43,6 +45,7 @@ class RobotsScanner:
             self.entries.append(current_entry)
 
     def print_entries(self) -> None:
+        # Prints all robot data found
         if not self.entries:
             print(f"No robots.txt file found at {self.target}")
             return
