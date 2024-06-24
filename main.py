@@ -3,7 +3,7 @@ import platform
 from title import title
 from portscan import PortScan
 from robotscan import RobotsScanner
-
+from wifiscan import WifiScan
 
 
 class Menu:
@@ -51,6 +51,7 @@ if __name__ == "__main__":
     options = [
         {"name": "Port Scanner", "action": PortScan().run},
         {"name": "Robot Search", "action": RobotsScanner().run},
+        {"name": "WiFi Scanner", "action": WifiScan().run}
         
     ]
     menu = Menu(options)
